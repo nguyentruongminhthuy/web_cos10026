@@ -1,0 +1,611 @@
+/* styles.css for Quillowen G04 EdTech used by all 4 pages */
+
+/* variables */
+:root {
+  /* colours */
+  --color-primary: #1f4d3a;       /* eucalyptus green */
+  --color-primary-dark: #163829;
+  --color-accent: #f2c230;        /* highlighter yellow never used for text */
+  --color-bg: #f4f7f5;
+  --color-surface: #ffffff;
+  --color-tint: #e6efe9;
+  --color-text: #17231e;
+  --color-muted: #4a5a54;         /* 7 to 1 contrast on white */
+  --color-line: #d5e0da;
+  --color-focus: #b45309;
+
+  /* font sizes */
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.75rem;
+  --text-xxl: 2.625rem;
+
+  /* fonts from the same family so they match */
+  --font-main: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+  --font-code: "Atkinson Hyperlegible Mono", Consolas, "Courier New", monospace;
+
+  /* spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-xxl: 4rem;
+  --max-width: 1100px;
+  --radius: 8px;
+}
+
+/* base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+/* typography */
+/* Atkinson Hyperlegible is designed for people with low vision */
+body {
+  font-family: var(--font-main);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: var(--text-xxl);
+  font-weight: 800;
+  margin: 0 0 var(--space-md);
+}
+
+/* highlighter stroke behind the page title like marking study notes */
+main h1 {
+  display: inline;
+  background-image: linear-gradient(transparent 62%, var(--color-accent) 62%, var(--color-accent) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* gives the inline h1 room before the intro */
+main h1 + p {
+  margin-top: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin: var(--space-xl) 0 var(--space-sm);
+}
+
+h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+
+h4 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin: var(--space-md) 0 var(--space-xs);
+}
+
+p,
+li,
+dd {
+  max-width: 68ch;   /* stop lines getting too long */
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration-color: var(--color-accent);
+}
+
+/* layout */
+.site-header {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm) var(--space-md);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 44px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 44px tall links are easy to tap */
+.main-nav a {
+  display: block;
+  min-height: 44px;
+  padding: 0.6rem var(--space-md);
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.main-nav a:not([aria-current]):hover {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+/* link for the page you are on using aria-current */
+.main-nav a[aria-current="page"] {
+  font-weight: 700;
+  border-bottom-color: var(--color-accent);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md) var(--space-xxl);
+}
+
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+}
+
+.site-footer > * {
+  max-width: calc(var(--max-width) - 2rem);   /* lines up with main content */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-xl);
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+.site-footer p {
+  font-size: var(--text-sm);
+}
+
+/* acknowledgement of country sits first and reads larger than the rest */
+.acknowledgement {
+  margin-top: 0;
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.site-footer .acknowledgement {
+  font-size: var(--text-base);
+}
+
+/* accessibility */
+/* skip link only shows when you tab to it */
+.skip-link {
+  position: absolute;
+  left: var(--space-md);
+  top: -100px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 700;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* yellow outline on the dark header and footer */
+.site-header a:focus-visible,
+.site-footer a:focus-visible {
+  outline-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* index page */
+/* member 2 index styles go here */
+
+/* jobs page */
+/* clearfix so main wraps around the floated aside */
+#jobs-page main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#jobs-page aside {
+  float: right;
+  width: 25%;
+  margin: var(--space-xl) 0 var(--space-md) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+}
+
+#jobs-page aside h2 {
+  margin-top: 0;
+  font-size: var(--text-lg);
+}
+
+#jobs-page aside h3 {
+  font-size: var(--text-base);
+}
+
+#jobs-page aside ul {
+  padding-left: var(--space-md);
+}
+
+/* job box overflow hidden keeps it from going under the aside */
+.job {
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 0 var(--space-xl) var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.job > h2 {
+  margin-top: var(--space-xl);
+}
+
+/* key facts in a tinted strip so salary and location are easy to scan */
+.job-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: var(--space-md) var(--space-lg);
+  margin: var(--space-md) 0 var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-tint);
+  border-radius: var(--radius);
+}
+
+.job-meta dt {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.job-meta dd {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.job ol {
+  padding-left: 1.4rem;
+}
+
+.job ol li::marker {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.job li {
+  margin-bottom: var(--space-xs);
+}
+
+/* essential and preferable side by side when there is room */
+.req-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0 var(--space-xl);
+}
+
+.req-cols ul {
+  margin-top: 0;
+  padding-left: 1.2rem;
+}
+
+.apply-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: var(--space-lg);
+  padding: 0 var(--space-lg);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+
+.apply-link:hover {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.inclusion {
+  clear: both;
+  margin-top: var(--space-xxl);
+  padding: var(--space-sm) var(--space-xl) var(--space-lg);
+  background-color: var(--color-tint);
+  border-radius: var(--radius);
+}
+
+.sources li {
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;   /* long urls wrap on phones */
+}
+
+/* apply page */
+/* member 2 form styles go here */
+
+/* about page */
+.group-info ul ul {
+  list-style-type: circle;
+  margin-top: var(--space-xs);
+}
+
+/* one card per member side by side when there is room */
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--space-lg);
+  margin: 0;
+}
+
+.member {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+}
+
+.members dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-xs) var(--space-sm);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+}
+
+.members dd {
+  margin-left: 0;
+}
+
+.student-id {
+  font-family: var(--font-code);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  background-color: #e3efe8;
+  color: #163829;
+  border: 1px solid #1f4d3a;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+/* quote reads bigger than body text and opens with a yellow mark */
+.members blockquote {
+  margin: var(--space-lg) 0 var(--space-xs);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.members blockquote p {
+  margin: 0;
+}
+
+.members blockquote p::before {
+  content: "\201C";
+  display: block;
+  font-size: 2.5rem;
+  line-height: 0.6;
+  margin-bottom: var(--space-xs);
+  color: #c79a00;
+}
+
+.translation {
+  color: var(--color-muted);
+  margin-top: 0;
+}
+
+.group-photo {
+  margin: var(--space-xl) 0;
+  max-width: 640px;
+  border: 4px solid #1f4d3a;
+  padding: var(--space-sm);
+  background-color: #ffffff;
+}
+
+.group-photo figcaption {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  padding-top: var(--space-sm);
+  text-align: center;
+}
+
+/* table scrolls sideways on small screens */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.fun-facts {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  background-color: #ffffff;
+}
+
+.fun-facts caption {
+  font-weight: 700;
+  text-align: left;
+  padding-bottom: var(--space-sm);
+  color: #1f4d3a;
+}
+
+.fun-facts th,
+.fun-facts td {
+  border: 1px solid #9fb8ab;
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+}
+
+.fun-facts thead th {
+  background-color: #1f4d3a;
+  color: #ffffff;
+}
+
+.fun-facts tbody tr:nth-child(even) {
+  background-color: #f1f6f3;
+}
+
+.fun-facts tbody tr:hover {
+  background-color: #fdf0c2;
+}
+
+.fun-facts tbody th {
+  background-color: #e3efe8;
+}
+
+/* responsive */
+/* tablet */
+@media (max-width: 768px) {
+  :root {
+    --text-xxl: 2rem;
+    --text-xl: 1.5rem;
+    --text-lg: 1.2rem;
+  }
+
+  /* aside stops floating on small screens */
+  #jobs-page aside {
+    float: none;
+    width: auto;
+    margin: var(--space-lg) 0;
+  }
+
+  .job {
+    padding: 0 var(--space-lg) var(--space-lg);
+  }
+
+  .inclusion {
+    padding: var(--space-xs) var(--space-lg) var(--space-md);
+  }
+}
+
+/* phone */
+@media (max-width: 480px) {
+  .main-nav a {
+    padding: 0.6rem 0.7rem;
+  }
+
+  .job {
+    padding: 0 var(--space-md) var(--space-md);
+  }
+
+  /* two short columns use less height than one long one */
+  .job-meta {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .job > h2 {
+    margin-top: var(--space-lg);
+  }
+
+  .member {
+    padding: var(--space-md);
+  }
+}
+
+/* print hides nav and shows link addresses */
+@media print {
+  .site-header nav,
+  .skip-link,
+  .apply-link {
+    display: none;
+  }
+
+  #jobs-page aside {
+    float: none;
+    width: auto;
+  }
+
+  .sources a::after {
+    content: " (" attr(href) ")";
+  }
+}
+
