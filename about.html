@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- about.html: team page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet group DVMT, the two Swinburne students who built the SwinEduTech recruitment website for COS10026 Web Technology Project.">
+  <meta name="keywords" content="SwinEduTech, DVMT, about, team, COS10026, Swinburne">
+  <meta name="author" content="Nguyen Dang Vinh">
+  <meta name="theme-color" content="#1f4d3a">
+  <title>SwinEduTech - About Us</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@500&amp;family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- Embedded CSS used only on this page -->
+  <style>
+    .members dd ul {
+      padding-left: var(--space-md);
+      margin: var(--space-sm) 0 0;
+    }
+  </style>
+</head>
+
+<body id="about-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header section -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="" width="40" height="40">
+        <span translate="no">SwinEduTech</span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Job Descriptions</a></li>
+          <li><a href="apply.html">Apply Now</a></li>
+          <li><a href="about.html" aria-current="page">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <h1>About our team</h1>
+    <p class="lead">We are group DVMT, two students who built the SwinEduTech recruitment website. We split the four pages evenly and share one stylesheet.</p>
+
+    <!-- Nested list: group name, class day and time -->
+    <section class="group-info" aria-labelledby="group-heading">
+      <h2 id="group-heading">Group details</h2>
+      <ul>
+        <li>Group name: DVMT</li>
+        <li>Class: HCM_ThursdayMorning_09
+          <ul>
+            <li>Day: Thursday</li>
+            <li>Time: 7:00 AM to 10:00 AM</li>
+          </ul>
+        </li>
+        <li>Unit: COS10026 - Web Technology Project</li>
+        <li>Industry: G04 Educational Technology (EdTech)</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="members-heading">
+      <h2 id="members-heading">Members and contributions</h2>
+      <!-- Definition list: member contributions and quotes -->
+      <dl class="members">
+        <!-- Member 1 -->
+        <div class="member">
+          <dt>Nguyen Dang Vinh <span class="student-id">SWS00172</span></dt>
+          <dd>
+            <ul>
+              <li>Built jobs.html and about.html</li>
+              <li>Wrote the colour variables, typography and layout in styles.css used by all four pages</li>
+              <li>Ran HTML validation and accessibility checks on all pages</li>
+            </ul>
+          </dd>
+          <dd>
+            <!-- lang="vi" tells screen readers the quote is in Vietnamese -->
+            <blockquote lang="vi">
+              <p>Có công mài sắt, có ngày nên kim.</p>
+            </blockquote>
+            <p class="translation">English: If you keep grinding an iron bar, one day it becomes a needle. Hard work pays off.</p>
+          </dd>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="member">
+          <dt>Nguyen Truong Minh Thuy <span class="student-id">SWD00450</span></dt>
+          <dd>
+            <ul>
+              <li>Built index.html and apply.html</li>
+              <li>Set up the Jira board for the project</li>
+              <li>Deployed the website on GitHub Pages</li>
+            </ul>
+          </dd>
+          <dd>
+            <blockquote lang="vi">
+              <p>SwinEduTech – Kiến tạo tri thức số, dẫn lối tương lai.</p>
+            </blockquote>
+            <p class="translation">English: SwinEduTech – Building digital knowledge, leading the way to the future.</p>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Group photo, file size under 300KB -->
+    <figure class="group-photo">
+      <img src="images/group-photo.jpg" alt="Nguyen Dang Vinh and Nguyen Truong Minh Thuy standing together at Swinburne" width="640" height="427" loading="lazy">
+      <figcaption>Group DVMT at Swinburne, 2026. Photo taken by the team.</figcaption>
+    </figure>
+
+    <!-- Fun facts table -->
+    <section aria-labelledby="facts-heading">
+      <h2 id="facts-heading">Fun facts</h2>
+      <div class="table-wrap">
+        <table class="fun-facts">
+          <caption>Fun facts about group DVMT</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Dream job</th>
+              <th scope="col">Coding snack</th>
+              <th scope="col">Hometown</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Nguyen Dang Vinh</th>
+              <td>[Dream job]</td>
+              <td>[Snack]</td>
+              <td>[Hometown]</td>
+            </tr>
+            <tr>
+              <th scope="row">Nguyen Truong Minh Thuy</th>
+              <td>[Dream job]</td>
+              <td>[Snack]</td>
+              <td>[Hometown]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Why the site acknowledges Country -->
+    <section class="country" aria-labelledby="country-heading">
+      <h2 id="country-heading">Acknowledgement of Country</h2>
+      <p>SwinEduTech acknowledges the Wurundjeri People of the Kulin Nation, the Traditional Owners of the land where Swinburne’s Melbourne campuses and our Melbourne office stand. We pay our respect to their Elders past, present and emerging, and to all Aboriginal and Torres Strait Islander peoples who use our learning tools.</p>
+      <p>This acknowledgement appears in the footer of every page. An acknowledgement only means something if it changes what we do, so on this site it also shows up in two practical ways:</p>
+      <ul>
+        <li>The job descriptions page invites Aboriginal and Torres Strait Islander peoples to apply and offers a culturally safe contact person during hiring.</li>
+        <li>Our product goal is learning tools that work for every learner, including First Nations students in regional and remote communities with slow internet.</li>
+      </ul>
+      <p>As Swinburne students we can also point applicants to the Moondani Toombadool Centre, Swinburne’s Aboriginal centre, whose Indigenous Student Service supports Indigenous students on campus, online and in the community.</p>
+    </section>
+  </main>
+
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="acknowledgement">
+      <p><strong>Aboriginal Acknowledgement:</strong> We respectfully acknowledge the Wurundjeri People of the Kulin Nation, the Traditional Custodians of the land on which Swinburne University operates, and pay our respects to Elders past, present, and emerging.</p>
+    </div>
+    <p>&copy; 2026 SwinEduTech. Group DVMT - COS10026.</p>
+    <!-- Inline CSS example -->
+    <p style="font-style: italic;">
+      Contact: <a href="mailto:SWD00450@swin.edu.au">SWD00450@swin.edu.au</a>
+    </p>
+    <ul>
+      <li><a href="https://nguyentruongminhthuy.github.io/web_cos10026/">GitHub Pages Link</a></li>
+      <li><a href="https://github.com/nguyentruongminhthuy/web_cos10026">GitHub Repository</a></li>
+      <li><a href="https://student-team-dvj5yzgb.atlassian.net/jira/software/projects/KAN/boards/2">Jira Board</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
