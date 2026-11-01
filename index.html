@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Home page. Author: Nguyen Truong Minh Thuy (Group DVMT). References: MDN Web Docs, W3C WAI -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SwinEduTech builds digital learning tools and inclusive online education platforms. Search our open web developer and designer roles.">
+  <meta name="keywords" content="SwinEduTech, EdTech, careers, web developer, designer, accessible learning">
+  <meta name="author" content="Nguyen Truong Minh Thuy">
+  <meta name="theme-color" content="#1c2551">
+  <link rel="canonical" href="https://nguyentruongminhthuy.github.io/web_cos10026/">
+  <title>SwinEduTech - Home</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Fonts: Atkinson Hyperlegible (Braille Institute) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@700&amp;family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- Embedded CSS -->
+  <style>
+    .slogan {
+      margin: var(--space-md) 0 0;
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+  </style>
+</head>
+<body id="index-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header section -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="" width="40" height="40">
+        <span translate="no">SwinEduTech</span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="jobs.html">Job Descriptions</a></li>
+          <li><a href="apply.html">Apply Now</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <h1>Welcome to SwinEduTech</h1>
+    <p class="slogan">Building digital knowledge, leading the way to the future.</p>
+
+    <!-- Company introduction -->
+    <section class="welcome-hero" aria-labelledby="about-heading">
+      <div>
+        <h2 id="about-heading">Digital education solutions and careers</h2>
+        <p>We are a technology company that builds digital learning tools and inclusive online education platforms for schools and TAFEs across Australia. We are looking for web developers and designers to help every learner, including people who use screen readers, keyboards or slow internet.</p>
+        <a class="btn" href="jobs.html">See open positions</a>
+      </div>
+      <img src="images/hero.svg" alt="A laptop showing a SwinEduTech video lesson with captions, next to a keyboard Tab key, a text size control and an accessibility symbol" width="960" height="600">
+    </section>
+
+    <!-- Search box -->
+    <section class="search-container" aria-labelledby="search-heading">
+      <h2 id="search-heading">Quick job search</h2>
+      <form action="jobs.html" method="get" role="search">
+        <label for="keyword">Keyword</label>
+        <p class="hint" id="search-hint">Type a job title, then press Search to see all job descriptions.</p>
+        <div class="search-row">
+          <input type="search" id="keyword" name="keyword" placeholder="e.g. designer" list="search-suggestions" aria-describedby="search-hint">
+          <button type="submit" class="btn">Search</button>
+        </div>
+        <datalist id="search-suggestions">
+          <option value="Front-End Developer"></option>
+          <option value="Full-Stack Developer"></option>
+          <option value="UI/UX Designer"></option>
+        </datalist>
+      </form>
+    </section>
+
+    <!-- Open positions table (rowspan, colspan) -->
+    <section aria-labelledby="roles-heading">
+      <h2 id="roles-heading">Current open positions</h2>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Current open positions table">
+        <table class="data-table">
+          <caption>Summary of current open roles at SwinEduTech</caption>
+          <thead>
+            <tr>
+              <th scope="col">Department</th>
+              <th scope="col">Job title</th>
+              <th scope="col">Location</th>
+              <th scope="col">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" rowspan="2">Engineering</th>
+              <td><a href="jobs.html#fe001">Front-End Developer</a></td>
+              <td>Melbourne, hybrid</td>
+              <td>Full-time</td>
+            </tr>
+            <tr>
+              <td><a href="jobs.html#fs002">Full-Stack Developer</a></td>
+              <td>Remote, Australia</td>
+              <td>Full-time</td>
+            </tr>
+            <tr>
+              <th scope="row">Design</th>
+              <td><a href="jobs.html#ux003">UI/UX Designer</a></td>
+              <td>Melbourne, hybrid</td>
+              <td>Part-time</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="3">Total open positions</th>
+              <!-- Inline CSS -->
+              <td style="color: #b83227; font-size: 1.2rem;">3</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="acknowledgement">
+      <p>We respectfully acknowledge the Wurundjeri People of the Kulin Nation, the Traditional Owners of the land where our Melbourne office and Swinburne’s campuses stand, and pay our respects to their Elders past, present and emerging. <a href="about.html#country-heading">Why we include this</a></p>
+    </div>
+    <p>&copy; 2026 SwinEduTech. Group DVMT - COS10026.</p>
+    <p class="contact">Contact: <a href="mailto:SWD00450@swin.edu.au">SWD00450@swin.edu.au</a></p>
+    <ul>
+      <li><a href="https://nguyentruongminhthuy.github.io/web_cos10026/">Live site (GitHub Pages)</a></li>
+      <li><a href="https://github.com/nguyentruongminhthuy/web_cos10026">GitHub Repository</a></li>
+      <li><a href="https://student-team-dvj5yzgb.atlassian.net/jira/software/projects/KAN/boards/2">Jira project board</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
